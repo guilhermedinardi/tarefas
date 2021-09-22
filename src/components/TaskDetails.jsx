@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import styled from 'styled-components'
 
 
@@ -15,6 +15,10 @@ const Button = styled.button`
     cursor: pointer;
     border: none;
     color: #eee;
+    &:hover{
+        background-color: #eee;
+        color: #563d67;
+    }
 `
 
 const DetailContainer = styled.div ` 
@@ -39,9 +43,15 @@ const Description = styled.p`
 const TaskDetails = () => {
     const params = useParams()
 
+    const history = useHistory()
+
+    const handleTaskButtonBack = () => {
+        history.goBack()
+    } 
+    
     return (
         <>
-            <Button>Voltar</Button>
+            <Button onClick={handleTaskButtonBack}>Voltar</Button>
             <DetailContainer>
                 <Title>{params.taskTitle}</Title>
                 <Description> Lorem ipsum lorem ipsum</Description>
