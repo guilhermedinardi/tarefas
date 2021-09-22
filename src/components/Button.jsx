@@ -13,6 +13,10 @@ const AddButton = styled.button`
     border: none;
     color: #eee;
     margin-left: 10px;
+    &:hover{
+        background-color: #eee;
+        color: #563d67;
+    }
 `
 
 const Button = ({ children, onClick }) => {
