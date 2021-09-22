@@ -3,11 +3,11 @@
 
  I built this CRUD application to study React and learn some basic concepts
 
-![Home](https://imgur.com/G7zIhpC)
+![Home](https://imgur.com/G7zIhpC.png)
 
 ---
 
-![Details](https://imgur.com/pUEyyra)
+![Details](https://imgur.com/pUEyyra.png)
 
 # Quick Start 🚀
 
