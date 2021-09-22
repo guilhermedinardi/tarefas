@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { CgClose, CgInfo } from 'react-icons/cg'
+import { useHistory } from 'react-router-dom'
 
 import Button from './Button'
 
@@ -23,22 +24,21 @@ const ButtonContainer = styled.div`
     display: flex;
     justify-content: space-between;
 `
-/* const Button = styled.button`
-    border: none;
-    font-style: 10px;
-    color: #563D67;
-    cursor: pointer;
-    margin-left: 10px;
-` */
 
 const Task = ({ task, handleTaskCompleted, handleTaskDeleted }) => {
+    const history = useHistory()
+
+    const handleTaskDetailClick = () => {
+        history.push(`/${task.title}`)
+    }
+
     return ( 
         <TaskContainer style={task.completed ? { borderLeft: '6px solid #563d67' } : {}}>
             <Title onClick={() => handleTaskCompleted(task.id)} >
                 {task.title}
             </Title>
             <ButtonContainer>
-                <Button>
+                <Button onClick={handleTaskDetailClick}>
                     <CgInfo/>
                 </Button>
                 <Button onClick={() => handleTaskDeleted(task.id)}>
